@@ -34,10 +34,10 @@ public class CreateButtonController : MonoBehaviour
         instantiated.name = "Button " + id.ToString();
         instantiated.transform.SetParent(grid.transform, false);
         instantiated.onClick.AddListener(delegate { InstantiatedClick(); } );
-        // var colors = instantiated.colors;
-        // colors.normalColor = buttonColors[id % 4];
-        // instantiated.colors = colors;
-        // id++;
+        var colors = instantiated.colors;
+        colors.normalColor = buttonColors[id % 4];
+        instantiated.colors = colors;
+        id++;
     }
 
     void InstantiatedClick()
