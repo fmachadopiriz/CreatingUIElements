@@ -14,10 +14,16 @@ public class CreateButtonController : MonoBehaviour
 
     private int id = 0;
 
+    private Color[] buttonColors = new Color[4] { Color.red, Color.green, Color.blue, Color.yellow };
+
     void Start()
     {
         Button button = createButton.GetComponent<Button>();
         button.onClick.AddListener(CreateButtonClick);
+        // for (int i = 0; i < 36; i++)
+        // {
+        //     CreateButtonClick();
+        // }
     }
 
     void CreateButtonClick()
@@ -28,7 +34,10 @@ public class CreateButtonController : MonoBehaviour
         instantiated.name = "Button " + id.ToString();
         instantiated.transform.SetParent(grid.transform, false);
         instantiated.onClick.AddListener(delegate { InstantiatedClick(); } );
-        id++;
+        // var colors = instantiated.colors;
+        // colors.normalColor = buttonColors[id % 4];
+        // instantiated.colors = colors;
+        // id++;
     }
 
     void InstantiatedClick()
